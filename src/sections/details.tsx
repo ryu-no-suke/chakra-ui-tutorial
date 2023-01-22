@@ -13,12 +13,14 @@ import {
   Button,
   useColorMode,
   useColorModeValue,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 type Props = {};
 
 function Details({}: Props) {
   const { toggleColorMode } = useColorMode();
   const bgColor = useColorModeValue("gray.50", "whiteAlpha.50");
+  const colSpan = useBreakpointValue({ base: 2, md: 1 });
   return (
     <VStack w="full" h="full" p={10} spacing={10} alignItems="flex-start">
       {/* Vstackはデフォルトで中央よせになっているのでalignItemsで指定 */}
@@ -27,13 +29,13 @@ function Details({}: Props) {
         <Text>If you already have an account, click here to log in.</Text>
       </VStack>
       <SimpleGrid columns={2} columnGap={3} rowGap={6} w="full">
-        <GridItem colSpan={1}>
+        <GridItem colSpan={colSpan}>
           <FormControl>
             <FormLabel>First Name</FormLabel>
             <Input placeholder="John" />
           </FormControl>
         </GridItem>
-        <GridItem colSpan={1}>
+        <GridItem colSpan={colSpan}>
           <FormControl>
             <FormLabel>Last Name</FormLabel>
             <Input placeholder="Doe" />
@@ -45,13 +47,13 @@ function Details({}: Props) {
             <Input placeholder="Blvd. Vroken Dreams 21" />
           </FormControl>
         </GridItem>
-        <GridItem colSpan={1}>
+        <GridItem colSpan={colSpan}>
           <FormControl>
             <FormLabel>City</FormLabel>
             <Input placeholder="San Francisco" />
           </FormControl>
         </GridItem>
-        <GridItem colSpan={1}>
+        <GridItem colSpan={colSpan}>
           <FormControl>
             <FormLabel>Country</FormLabel>
             <Select>
