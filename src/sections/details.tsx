@@ -66,7 +66,7 @@ function Details({}: Props) {
           <Checkbox defaultChecked>Skip to billing address.</Checkbox>
         </GridItem>
         <GridItem colSpan={2}>
-          <Button size="lg" w="full">
+          <Button colorScheme="brand" size="lg" w="full">
             Place Order
           </Button>
         </GridItem>
